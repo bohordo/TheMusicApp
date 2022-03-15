@@ -1,23 +1,39 @@
 package com.training.TheMusicApp.controller;
 
-import org.springframework.stereotype.Controller;
+import com.training.TheMusicApp.model.Song;
+import com.training.TheMusicApp.model.User;
+import com.training.TheMusicApp.service.SongService;
+import com.training.TheMusicApp.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class MusicAppController
 {
-    @GetMapping ("/getSongs")
-    public List<String> getSongs(){
 
-        return null;
+    @Autowired
+    private SongService songService;
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping ("/getSongs")
+    public List<Song> getSongs(){
+        return songService.listSongsIterable();
     }
 
     @GetMapping("/getArtist")
     public List<String> getArtist(){
 
         return null;
+    }
+
+    @GetMapping("/getUsers")
+    public List<User> getUsers(){
+        return userService.listUser();
     }
 
 }
