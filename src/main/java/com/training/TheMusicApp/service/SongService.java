@@ -18,4 +18,11 @@ public class SongService {
         return (List<Song>)songRepository.findAll();
     }
 
+//    public Song save (Song song){
+//        return songRepository.save(song);
+//    }
+
+    public void save(List<Song> songs){
+        songRepository.saveAll(songs);
+    }
 }
