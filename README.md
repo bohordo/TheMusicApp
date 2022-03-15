@@ -3,15 +3,15 @@ Code challenge to exercise and consolidate knowledge
 
 ## Getting Started
 
-###Prerequisites
+### Prerequisites
 
 You need:
 
-*Java 1.8 (jdk)
+* Java 1.8 (jdk)
 
 ### Bulk the data
 
-....
+...
 
 ### Installing
 
