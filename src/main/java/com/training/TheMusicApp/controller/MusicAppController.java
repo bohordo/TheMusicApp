@@ -1,7 +1,7 @@
 package com.training.TheMusicApp.controller;
 
-import com.training.TheMusicApp.model.Song;
-import com.training.TheMusicApp.model.User;
+import com.training.TheMusicApp.service.domain.Song;
+import com.training.TheMusicApp.service.domain.User;
 import com.training.TheMusicApp.service.SongService;
 import com.training.TheMusicApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

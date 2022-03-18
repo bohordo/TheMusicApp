@@ -1,4 +1,4 @@
-package com.training.TheMusicApp.model;
+package com.training.TheMusicApp.service.domain;
 
 import lombok.Data;
 

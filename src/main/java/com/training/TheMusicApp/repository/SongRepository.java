@@ -1,6 +1,6 @@
 package com.training.TheMusicApp.repository;
 
-import com.training.TheMusicApp.model.Song;
+import com.training.TheMusicApp.service.domain.Song;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;

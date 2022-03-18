@@ -1,6 +1,6 @@
 package com.training.TheMusicApp.service;
 
-import com.training.TheMusicApp.model.User;
+import com.training.TheMusicApp.service.domain.User;
 import com.training.TheMusicApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

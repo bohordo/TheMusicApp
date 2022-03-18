@@ -2,7 +2,7 @@ package com.training.TheMusicApp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.training.TheMusicApp.model.Song;
+import com.training.TheMusicApp.service.domain.Song;
 import com.training.TheMusicApp.service.SongService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,9 +28,10 @@ public class TheMusicAppApplication {
 
 			TypeReference<List<Song>> typeReference = new TypeReference<List<Song>>(){};
 
-			InputStream inputStream = TypeReference.class.getResourceAsStream("/input/spotify-top100-2018.json");
+			InputStream inputStreamJson = TypeReference.class.getResourceAsStream("/input/spotify-top100-2018.json");
+
 			try {
-				List<Song> users = mapper.readValue(inputStream,typeReference);
+				List<Song> users = mapper.readValue(inputStreamJson,typeReference);
 				songService.save(users);
 				System.out.println("Songs saved");
 			} catch (IOException e){

@@ -1,7 +1,7 @@
 package com.training.TheMusicApp.service;
 
 
-import com.training.TheMusicApp.model.Song;
+import com.training.TheMusicApp.service.domain.Song;
 import com.training.TheMusicApp.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
