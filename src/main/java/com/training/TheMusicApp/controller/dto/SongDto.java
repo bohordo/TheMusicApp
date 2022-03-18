@@ -1,5 +1,8 @@
 package com.training.TheMusicApp.controller.dto;
 
+import lombok.Data;
+
+@Data
 public class SongDto {
 
     private String id;
