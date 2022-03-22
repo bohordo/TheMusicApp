@@ -2,11 +2,10 @@ package com.training.TheMusicApp.service.domain;
 
 import lombok.Data;
 
-import java.util.UUID;
-
 @Data
-public class User {
+public class Artist {
 
-    UUID id;
-    String username;
+    private User id;
+    private String name;
+
 }

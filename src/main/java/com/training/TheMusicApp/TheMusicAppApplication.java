@@ -20,23 +20,23 @@ public class TheMusicAppApplication {
 		SpringApplication.run(TheMusicAppApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner runner(SongService songService){
-		return args -> {
-			// read JSON and load json
-			ObjectMapper mapper = new ObjectMapper();
-
-			TypeReference<List<Song>> typeReference = new TypeReference<List<Song>>(){};
-
-			InputStream inputStreamJson = TypeReference.class.getResourceAsStream("/input/spotify-top100-2018.json");
-
-			try {
-				List<Song> users = mapper.readValue(inputStreamJson,typeReference);
-				songService.save(users);
-				System.out.println("Songs saved");
-			} catch (IOException e){
-				System.out.println("Unable to save songs: " + e.getMessage());
-			}
-		};
-	}
+//	@Bean
+//	CommandLineRunner runner(SongService songService){
+//		return args -> {
+//			// read JSON and load json
+//			ObjectMapper mapper = new ObjectMapper();
+//
+//			TypeReference<List<Song>> typeReference = new TypeReference<List<Song>>(){};
+//
+//			InputStream inputStreamJson = TypeReference.class.getResourceAsStream("/input/spotify-top100-2018.json");
+//
+//			try {
+//				List<Song> users = mapper.readValue(inputStreamJson,typeReference);
+//				songService.save(users);
+//				System.out.println("Songs saved");
+//			} catch (IOException e){
+//				System.out.println("Unable to save songs: " + e.getMessage());
+//			}
+//		};
+//	}
 }
