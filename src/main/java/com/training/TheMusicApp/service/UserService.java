@@ -1,5 +1,6 @@
 package com.training.TheMusicApp.service;
 
+import com.training.TheMusicApp.repository.entity.UserEntity;
 import com.training.TheMusicApp.service.domain.User;
 import com.training.TheMusicApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> listUser(){
-        return (List<User>) userRepository.findAll();
+    public List<UserEntity> listUser(){
+        return (List<UserEntity>) userRepository.findAll();
     }
 }
