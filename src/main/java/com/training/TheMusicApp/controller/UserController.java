@@ -1,6 +1,7 @@
 package com.training.TheMusicApp.controller;
 
 import com.training.TheMusicApp.controller.dto.UserDto;
+import com.training.TheMusicApp.repository.entity.UserEntity;
 import com.training.TheMusicApp.service.domain.Song;
 import com.training.TheMusicApp.service.domain.User;
 import com.training.TheMusicApp.service.SongService;
@@ -28,7 +29,7 @@ public class UserController
 
     @GetMapping("/getUsers")
     public List<UserDto> getUsers(){
-        List<User> userList = userService.listUser();
+        List<UserEntity> userList = userService.listUser();
         return (List<UserDto>) mapper.map(userList,UserDto.class);
     }
 }

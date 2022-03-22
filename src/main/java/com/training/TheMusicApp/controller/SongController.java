@@ -1,6 +1,7 @@
 package com.training.TheMusicApp.controller;
 
 import com.training.TheMusicApp.controller.dto.SongDto;
+import com.training.TheMusicApp.repository.entity.SongEntity;
 import com.training.TheMusicApp.service.SongService;
 import com.training.TheMusicApp.service.domain.Song;
 import org.modelmapper.ModelMapper;
@@ -20,7 +21,7 @@ public class SongController {
 
     @GetMapping("/getSongs")
     public List<SongDto> getSongs(){
-        List<Song> listSong = songService.listSongsIterable();
+        List<SongEntity> listSong = songService.listSongsIterable();
         return (List<SongDto>) mapper.map(listSong,SongDto.class);
     }
 }
