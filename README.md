@@ -6,17 +6,18 @@ Code challenge to exercise and consolidate knowledge
 ### Prerequisites
 
 You need:
-
+```
 * Java 1.8 (jdk)
-
+* Lombok Plugin
+```
 ### Bulk the data
 
 ...
 
 ### Installing
 
-Clone the repo and ...
+Clone the repo and build
 
-## Running the application
+## Running the application locally
 
-To do...
+Run ```docker-compose up``` to 

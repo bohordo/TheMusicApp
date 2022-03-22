@@ -8,6 +8,5 @@ public class Song {
         private String id;
         private String name;
         private String artists;
-        private String genre;
 
 }

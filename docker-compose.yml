@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: sa
+      MYSQL_DATABASE: the_music_app
+    ports:
+      - "3308:3306"
+  admin:
+    image: adminer
+    ports:
+      - "8080:8080"

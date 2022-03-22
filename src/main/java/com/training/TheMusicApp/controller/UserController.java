@@ -9,6 +9,7 @@ import com.training.TheMusicApp.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,19 +18,20 @@ import java.util.List;
 public class UserController
 {
 
-    ModelMapper mapper;
+    private ModelMapper mapper;
 
     @Autowired
     private UserService userService;
-
-    @GetMapping("/getArtist")
-    public List<String> getArtist(){
-        return null;
-    }
 
     @GetMapping("/getUsers")
     public List<UserDto> getUsers(){
         List<UserEntity> userList = userService.listUser();
         return (List<UserDto>) mapper.map(userList,UserDto.class);
     }
+
+    @PostMapping("/createUser")
+    public void createUser(){
+
+    }
+
 }
