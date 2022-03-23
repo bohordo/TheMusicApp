@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,10 +25,10 @@ public class DataController {
     private DataService dataService;
 
     @PostMapping("/songs")
-    public void loadSongs(@RequestParam("file") File file) throws IOException {
+    public void loadSongs(@RequestParam ("file") MultipartFile file) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper();
-        List<Song> songs = mapper.readValue(file, new TypeReference<List<Song>>(){});
+        List<Song> songs = mapper.readValue(file.getInputStream(), new TypeReference<List<Song>>(){});
 
         dataService.saveData(songs);
     }
