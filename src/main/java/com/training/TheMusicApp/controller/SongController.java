@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 public class SongController {
 
-    ModelMapper mapper;
+    private ModelMapper mapper;
 
     @Autowired
     private SongService songService;
