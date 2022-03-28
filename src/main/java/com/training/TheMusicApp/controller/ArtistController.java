@@ -1,5 +1,8 @@
 package com.training.TheMusicApp.controller;
 
+import com.training.TheMusicApp.controller.dto.ArtistDto;
+import com.training.TheMusicApp.service.ArtistService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,8 +13,23 @@ import java.util.List;
 @RequestMapping("/artist")
 public class ArtistController {
 
-    @GetMapping("/get")
-    public List<String> getArtist(){
-        return null;
+    @Autowired
+    ArtistService artistService;
+
+    @GetMapping("/get/all")
+    public List<ArtistDto> getAll(){
+        return artistService.getTopThree();
+    }
+
+    @GetMapping("/get/top/three")
+    public List<ArtistDto> getTopThree()
+    {
+        return artistService.getTopThree();
+
+    }
+
+    @GetMapping("/get/top/five")
+    public List<ArtistDto> getTopFive(){
+        return artistService.getTopFive();
     }
 }

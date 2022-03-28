@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -13,6 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UserDto {
 
-    UUID id;
+    String id;
     String username;
+    private int totalNumberOfLikes;
 }

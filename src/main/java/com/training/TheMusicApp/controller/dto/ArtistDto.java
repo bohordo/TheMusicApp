@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ArtistDto {
 
-    String name;
+    private String name;
+    private int totalNumberOfLikes;
 
 }

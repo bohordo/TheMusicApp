@@ -1,6 +1,5 @@
 package com.training.TheMusicApp.repository.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -10,11 +9,11 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-@Table(name = "user")
-public class UserEntity {
+@Table(name = "user_song")
+public class UserSongEntity {
 
     @Id
-    String id;
-    String username;
-    private int totalNumberOfLikes;
+    private String id;
+    private String userId;
+    private String songId;
 }
