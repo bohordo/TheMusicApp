@@ -1,6 +1,5 @@
 package com.training.TheMusicApp.repository;
 
-
 import com.training.TheMusicApp.repository.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

@@ -1,10 +1,7 @@
 package com.training.TheMusicApp.controller;
 
 import com.training.TheMusicApp.controller.dto.SongDto;
-import com.training.TheMusicApp.mapper.MappingUtil;
-import com.training.TheMusicApp.repository.entity.SongEntity;
 import com.training.TheMusicApp.service.SongService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

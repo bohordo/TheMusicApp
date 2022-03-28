@@ -1,7 +1,6 @@
 package com.training.TheMusicApp.repository.entity;
 
 import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
