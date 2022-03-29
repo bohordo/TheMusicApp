@@ -9,6 +9,10 @@ import com.training.TheMusicApp.repository.entity.ArtistEntity;
 import com.training.TheMusicApp.repository.entity.SongEntity;
 import com.training.TheMusicApp.repository.entity.UserEntity;
 import com.training.TheMusicApp.repository.entity.UserSongEntity;
+import com.training.TheMusicApp.service.domain.Artist;
+import com.training.TheMusicApp.service.domain.Song;
+import com.training.TheMusicApp.service.domain.User;
+import com.training.TheMusicApp.service.domain.UserSong;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,37 +33,44 @@ public class LikeService {
     @Autowired
     UserRepository userRepository;
 
+    ObjectMapper mapper = new ObjectMapper();
+
     public void likeASong(String songId, String userId){
 
         if(!couldYouLikeThatSong(songId,userId)){
 
-            ObjectMapper mapper = new ObjectMapper();
-            Optional songToLike = songRepository.findById(songId);
+            //ObjectMapper mapper = new ObjectMapper();
+            Optional<SongEntity> songToLikeEntity = songRepository.findById(songId);
 
-            if(songToLike.isPresent()){
-                SongEntity song =  mapper.convertValue (songToLike.get(), SongEntity.class);
-                song.setNumberOfLikes(song.getNumberOfLikes()+1);
+            if(songToLikeEntity.isPresent()){
 
-                UserSongEntity userSongEntity = new UserSongEntity();
-                userSongEntity.setId(userId+songId);
-                userSongEntity.setUserId(userId);
-                userSongEntity.setSongId(songId);
+                Song song = songPlusOneLike(songToLikeEntity.get());
+
+
+                UserSong userSong = UserSong.builder().id(userId+songId).userId(userId).songId(songId).build();
 
                 Optional<UserEntity> optionalUserEntity = userRepository.findById(userId);
-                UserEntity userEntity = optionalUserEntity.get();
-                userEntity.setTotalNumberOfLikes(userEntity.getTotalNumberOfLikes()+1);
+                User user =  mapper.convertValue (optionalUserEntity.get(), User.class);
+                user.setTotalNumberOfLikes(user.getTotalNumberOfLikes()+1);
 
-                Optional<ArtistEntity> OptionalArtistEntity = artistRepository.findById(song.getArtists());
-                ArtistEntity artistEntity = OptionalArtistEntity.get();
-                artistEntity.setTotalNumberOfLikes(artistEntity.getTotalNumberOfLikes()+1);
+                Optional<ArtistEntity> optionalArtist = artistRepository.findById(song.getArtists());
+                Artist artist  = mapper.convertValue (optionalArtist, Artist.class);
 
-                songRepository.save(song);
-                userSongRepository.save(userSongEntity);
+                artist.setTotalNumberOfLikes(artist.getTotalNumberOfLikes()+1);
 
-
-                artistRepository.save(artistEntity);
+                songRepository.save(mapper.convertValue (song, SongEntity.class));
+                userSongRepository.save(mapper.convertValue (userSong, UserSongEntity.class));
+                artistRepository.save(mapper.convertValue (artist, ArtistEntity.class));
             }
         }
+
+    }
+
+    public Song songPlusOneLike(SongEntity songToLikeEntity){
+
+        Song song = mapper.convertValue (songToLikeEntity, Song.class);
+        song.setNumberOfLikes(song.getNumberOfLikes()+1);
+        return song;
 
     }
 
