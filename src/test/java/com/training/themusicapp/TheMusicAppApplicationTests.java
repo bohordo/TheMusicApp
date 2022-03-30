@@ -1,4 +1,4 @@
-package com.training.TheMusicApp;
+package com.training.themusicapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
