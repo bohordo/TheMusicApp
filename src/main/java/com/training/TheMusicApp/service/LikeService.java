@@ -39,13 +39,11 @@ public class LikeService {
 
         if(!couldYouLikeThatSong(songId,userId)){
 
-            //ObjectMapper mapper = new ObjectMapper();
             Optional<SongEntity> songToLikeEntity = songRepository.findById(songId);
 
             if(songToLikeEntity.isPresent()){
 
                 Song song = songPlusOneLike(songToLikeEntity.get());
-
 
                 UserSong userSong = UserSong.builder().id(userId+songId).userId(userId).songId(songId).build();
 
