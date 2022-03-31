@@ -21,9 +21,6 @@ public class UserController
     @GetMapping("/top/{number}")
     public List<UserDto> getUsersByTop(@PathVariable String number)
     {
-        if(number.equals("3")){
-            return userService.getTopThree();
-        }
-        return userService.getAllUsers();
+            return userService.getUsers(number);
     }
 }

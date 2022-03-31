@@ -21,12 +21,6 @@ public class ArtistController {
     @GetMapping("/top/{number}")
     public List<ArtistDto> getTopByNumber(@PathVariable String number)
     {
-        if (number.equals("3")){
-            return artistService.getTopThree();
-        }
-        if (number.equals("5")){
-            return artistService.getTopFive();
-        }
-            return artistService.getAllArtist();
+            return artistService.getArtist(number);
     }
 }

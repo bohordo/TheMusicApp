@@ -2,7 +2,6 @@ package com.training.themusicapp.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.training.themusicapp.mapper.MappingUtil;
 import com.training.themusicapp.service.DataService;
 import com.training.themusicapp.service.domain.Artist;
 import com.training.themusicapp.service.domain.Song;

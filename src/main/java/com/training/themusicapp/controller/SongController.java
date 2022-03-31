@@ -20,15 +20,6 @@ public class SongController {
     @GetMapping("/top/{number}")
     public List<SongDto> getTopByNumberSongs(@PathVariable String number)
     {
-        if(number.equals("5")){
-            return songService.getTopFive();
-        }
-        if (number.equals("10")){
-            return songService.getTopTen();
-        }
-        if (number.equals("15")){
-            return songService.getTopFifteen();
-        }
-        return songService.getAllSongs();
+        return songService.getSongs(number);
     }
 }

@@ -19,6 +19,13 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public List<UserDto> getUsers(String number){
+        if (number.equals("3")){
+            return getTopThree();
+        }
+        return getAllUsers();
+    }
+
     public List<UserDto> getAllUsers(){
         List<UserEntity> listUsers = (List<UserEntity>) userRepository.findAll();
         return mappingUtil.mapAll(listUsers, UserDto.class);

@@ -19,6 +19,20 @@ public class SongService {
     @Autowired
     private SongRepository songRepository;
 
+    public List<SongDto> getSongs(String number){
+
+        if(number.equals("5")){
+            return getTopFive();
+        }
+        if(number.equals("10")){
+            return getTopTen();
+        }
+        if(number.equals("15")){
+            return getTopFifteen();
+        }
+        return getAllSongs();
+    }
+
     public List<SongDto> getAllSongs(){
         List<SongEntity> listSong = (List<SongEntity>) songRepository.findAll();
         return mappingUtil.mapAll(listSong, SongDto.class);

@@ -18,6 +18,16 @@ public class ArtistService {
     @Autowired
     ArtistRepository artistRepository;
 
+    public List<ArtistDto> getArtist(String number){
+        if(number.equals("3")){
+            return getTopThree();
+        }
+        if(number.equals("5")){
+            return getTopFive();
+        }
+        return getAllArtist();
+    }
+
     public List<ArtistDto> getAllArtist(){
         List<ArtistEntity> listSong = (List<ArtistEntity>) artistRepository.findAll();
         return mappingUtil.mapAll(listSong, ArtistDto.class);
