@@ -14,6 +14,7 @@ import javax.persistence.Table;
 public class ArtistEntity {
 
     @Id
+    private String id;
     private String name;
     private int totalNumberOfLikes;
 }

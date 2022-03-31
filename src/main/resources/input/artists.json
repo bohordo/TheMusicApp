@@ -1,72 +1,282 @@
 [
-  {"name": "Marshmello"},
-  {"name": "Zedd"},
-  {"name": "benny blanco"},
-  {"name": "Post Malone"},
-  {"name": "Dynoro"},
-  {"name": "XXXTENTACION"},
-  {"name": "Imagine Dragons"},
-  {"name": "Juice WRLD"},
-  {"name": "Selena Gomez"},
-  {"name": "Ed Sheeran"},
-  {"name": "Drake"},
-  {"name": "Billie Eilish"},
-  {"name": "Maroon 5"},
-  {"name": "Lil Dicky"},
-  {"name": "Eminem"},
-  {"name": "The Weeknd"},
-  {"name": "ZAYN"},
-  {"name": "Piso 21"},
-  {"name": "Sam Smith"},
-  {"name": "Camila Cabello"},
-  {"name": "Rich The Kid"},
-  {"name": "Anne-Marie"},
-  {"name": "6ix9ine"},
-  {"name": "Luis Fonsi"},
-  {"name": "Becky G"},
-  {"name": "5 Seconds of Summer"},
-  {"name": "Lauv"},
-  {"name": "Ariana Grande"},
-  {"name": "Shawn Mendes"},
-  {"name": "Migos"},
-  {"name": "Keala Settle"},
-  {"name": "Dua Lipa"},
-  {"name": "Travis Scott"},
-  {"name": "Clean Bandit"},
-  {"name": "Nicky Jam"},
-  {"name": "Dean Lewis"},
-  {"name": "Anitta"},
-  {"name": "Kendrick Lamar"},
-  {"name": "Jonas Blue"},
-  {"name": "Nio Garcia"},
-  {"name": "Bruno Mars"},
-  {"name": "Wolfine"},
-  {"name": "Khalid"},
-  {"name": "Ozuna"},
-  {"name": "Bebe Rexha"},
-  {"name": "Ti?sto"},
-  {"name": "BlocBoy JB"},
-  {"name": "Sofia Reyes"},
-  {"name": "DJ Snake"},
-  {"name": "NF"},
-  {"name": "Cardi B"},
-  {"name": "Maluma"},
-  {"name": "Rudimental"},
-  {"name": "Hailee Steinfeld"},
-  {"name": "Tyga"},
-  {"name": "G-Eazy"},
-  {"name": "Calvin Harris"},
-  {"name": "DJ Khaled"},
-  {"name": "Zac Efron"},
-  {"name": "Dennis Lloyd"},
-  {"name": "David Guetta"},
-  {"name": "Reik"},
-  {"name": "Daddy Yankee"},
-  {"name": "Portugal. The Man"},
-  {"name": "Lil Baby"},
-  {"name": "Natti Natasha"},
-  {"name": "Lil Uzi Vert"},
-  {"name": "Loud Luxury"},
-  {"name": "Offset"},
-  {"name": "Bazzi"}
+  {
+    "id": "c06c42c6-0655-4d6c-b8bb-0405953738ce",
+    "name": "Marshmello"
+  },
+  {
+    "id": "3a814fae-6b52-4d3b-8ddb-343bd2f76a03",
+    "name": "Zedd"
+  },
+  {
+    "id": "e1e7dd05-d46a-4aa1-a28d-d8fa2be397c4",
+    "name": "benny blanco"
+  },
+  {
+    "id": "9b117252-1611-4690-8b49-61cd8e987268",
+    "name": "Post Malone"
+  },
+  {
+    "id": "71563036-b17f-4518-b0e4-efcab84191e6",
+    "name": "Dynoro"
+  },
+  {
+    "id": "9509a7bb-294d-4745-93b8-51f0784951f5",
+    "name": "XXXTENTACION"
+  },
+  {
+    "id": "dd268d3b-de5b-4330-9632-d8cc4577dcfc",
+    "name": "Imagine Dragons"
+  },
+  {
+    "id": "a56a3941-6d83-4783-ad13-2797cfd68824",
+    "name": "Juice WRLD"
+  },
+  {
+    "id": "75ca6c1f-5090-410b-9a8e-a7bf1af44f16",
+    "name": "Selena Gomez"
+  },
+  {
+    "id": "2b2860e2-26b4-4d5b-b22a-8408fc84634e",
+    "name": "Ed Sheeran"
+  },
+  {
+    "id": "50e323ad-344b-4840-b38b-15864c085abe",
+    "name": "Drake"
+  },
+  {
+    "id": "7ed48e64-1c5d-4e9c-aa56-79e7ed8642cd",
+    "name": "Billie Eilish"
+  },
+  {
+    "id": "ec9ab727-993e-4b58-8a6c-53334f685c58",
+    "name": "Maroon 5"
+  },
+  {
+    "id": "fcd612fe-d2f9-47b4-8e58-43ab9ae85160",
+    "name": "Lil Dicky"
+  },
+  {
+    "id": "81ec6953-b555-4ff6-867f-c6c6def17d38",
+    "name": "Eminem"
+  },
+  {
+    "id": "11b601d9-c9ea-4cf1-9e39-0889bbe25c4e",
+    "name": "The Weeknd"
+  },
+  {
+    "id": "18baa590-dbf5-4674-a098-c5063e6abe01",
+    "name": "ZAYN"
+  },
+  {
+    "id": "5af94c00-6e85-402f-bc67-34c6a28fa92e",
+    "name": "Piso 21"
+  },
+  {
+    "id": "463b72df-aba7-4c13-8fdb-e54ec788f045",
+    "name": "Sam Smith"
+  },
+  {
+    "id": "68577095-63b3-4b7c-a6e7-6f8a716247ab",
+    "name": "Camila Cabello"
+  },
+  {
+    "id": "411bd63c-14cd-4c75-856a-b081f00c12a6",
+    "name": "Rich The Kid"
+  },
+  {
+    "id": "3cad186f-836d-4f79-baf4-313aa5753f54",
+    "name": "Anne-Marie"
+  },
+  {
+    "id": "845fe4a9-a476-43a4-af48-aefe36967005",
+    "name": "6ix9ine"
+  },
+  {
+    "id": "f51ed525-fb0e-4ecf-8a32-6a3fdf77a9d6",
+    "name": "Luis Fonsi"
+  },
+  {
+    "id": "0c5dbf4d-8c5d-4dae-a258-f26eec325ab2",
+    "name": "Becky G"
+  },
+  {
+    "id": "8df953d0-80ec-4d71-978a-803ef9553f00",
+    "name": "5 Seconds of Summer"
+  },
+  {
+    "id": "a9af5810-b8d7-4661-8ba8-3d80ee61b91e",
+    "name": "Lauv"
+  },
+  {
+    "id": "e8cdabb2-71a8-423b-bc96-00cf6c6c9a1f",
+    "name": "Ariana Grande"
+  },
+  {
+    "id": "752ecafb-07a8-46e7-8f17-36da11b867c0",
+    "name": "Shawn Mendes"
+  },
+  {
+    "id": "6c2f1336-3dfe-4d4e-aa72-8b2760890878",
+    "name": "Migos"
+  },
+  {
+    "id": "c4bc6286-5522-4d27-bafb-573d5007d093",
+    "name": "Keala Settle"
+  },
+  {
+    "id": "1f7f921a-4827-4fda-bd16-002d770aed75",
+    "name": "Dua Lipa"
+  },
+  {
+    "id": "5e11b188-1829-4fa0-8e79-4393178f191a",
+    "name": "Travis Scott"
+  },
+  {
+    "id": "73d8342e-1e79-436b-8381-aa90b813e0b8",
+    "name": "Clean Bandit"
+  },
+  {
+    "id": "672e1cbb-5eae-4cd1-bb7c-3d66299ca3dd",
+    "name": "Nicky Jam"
+  },
+  {
+    "id": "6b5f98a5-9cd9-4cea-8e69-b28865af0499",
+    "name": "Dean Lewis"
+  },
+  {
+    "id": "d6cee3df-01ae-4364-85b9-517d8fadf68d",
+    "name": "Anitta"
+  },
+  {
+    "id": "0c833c6a-d053-49c7-9847-b68e18b7760d",
+    "name": "Kendrick Lamar"
+  },
+  {
+    "id": "684669d4-6629-448b-a553-21557e000e93",
+    "name": "Jonas Blue"
+  },
+  {
+    "id": "0c443d55-0953-431c-862d-ff7caa77709c",
+    "name": "Nio Garcia"
+  },
+  {
+    "id": "0f3a5244-41d1-4145-9023-c570b478b1dd",
+    "name": "Bruno Mars"
+  },
+  {
+    "id": "5e93169e-2055-4335-a849-d2f41e6cc2ef",
+    "name": "Wolfine"
+  },
+  {
+    "id": "0ccfa195-aab8-4ed6-91eb-a35aed9c2b4a",
+    "name": "Khalid"
+  },
+  {
+    "id": "52e4a5df-ed38-478d-acd7-05a6fbcbed6b",
+    "name": "Ozuna"
+  },
+  {
+    "id": "8f1da5c2-3cc0-4778-b40c-0726ac6ba529",
+    "name": "Bebe Rexha"
+  },
+  {
+    "id": "0e21d2ee-a379-492a-9f98-e8b46fe4d882",
+    "name": "Ti?sto"
+  },
+  {
+    "id": "7f888c29-d0f0-4ae1-8001-13f9cf25130a",
+    "name": "BlocBoy JB"
+  },
+  {
+    "id": "47e8b565-0b94-46e9-8c83-5ab83f35fe72",
+    "name": "Sofia Reyes"
+  },
+  {
+    "id": "f5a687ee-5139-4f1a-a780-3f3e44ea732b",
+    "name": "DJ Snake"
+  },
+  {
+    "id": "04d6c595-823a-4e32-b001-08a09dbe8701",
+    "name": "NF"
+  },
+  {
+    "id": "b8e1a343-4a0b-40af-a4a9-234a5baf6904",
+    "name": "Cardi B"
+  },
+  {
+    "id": "a953cf43-4895-456a-8880-2d1c93b4801c",
+    "name": "Maluma"
+  },
+  {
+    "id": "3ca4dc24-9214-4b27-a4fa-551da832b728",
+    "name": "Rudimental"
+  },
+  {
+    "id": "250abe9f-4978-4004-bbb0-0b377cad85e9",
+    "name": "Hailee Steinfeld"
+  },
+  {
+    "id": "fea2fbc5-9db2-4c73-9996-e92343a37011",
+    "name": "Tyga"
+  },
+  {
+    "id": "7fd2c829-baa3-4984-9d34-cc37e08c2b00",
+    "name": "G-Eazy"
+  },
+  {
+    "id": "f32c7d25-2537-4c68-8bbb-9d440a3424ab",
+    "name": "Calvin Harris"
+  },
+  {
+    "id": "7c782546-4d0f-4ec2-b1f4-363f72d3c7c8",
+    "name": "DJ Khaled"
+  },
+  {
+    "id": "fa820877-a97a-4512-9469-f918ddcdd7b0",
+    "name": "Zac Efron"
+  },
+  {
+    "id": "c8e1c094-8fca-4092-8131-a65ffa456ba7",
+    "name": "Dennis Lloyd"
+  },
+  {
+    "id": "fa31654f-7445-4094-918a-85257f696b97",
+    "name": "David Guetta"
+  },
+  {
+    "id": "5bcfeea7-c831-41a8-ac90-a6dbf4bd77f6",
+    "name": "Reik"
+  },
+  {
+    "id": "e163bd71-2319-45fe-bbdf-5e3a970e910d",
+    "name": "Daddy Yankee"
+  },
+  {
+    "id": "44697760-1a7e-49d0-96ff-0b05fc991dcc",
+    "name": "Portugal. The Man"
+  },
+  {
+    "id": "711be494-bb99-49fb-bbb8-470924424705",
+    "name": "Lil Baby"
+  },
+  {
+    "id": "a3e2cb31-b731-4cdf-a503-458cf7f1ad09",
+    "name": "Natti Natasha"
+  },
+  {
+    "id": "de78afd0-6ec9-430f-a704-f3e38d5f9793",
+    "name": "Lil Uzi Vert"
+  },
+  {
+    "id": "60720626-bad5-4fa6-899b-2a91980a82fe",
+    "name": "Loud Luxury"
+  },
+  {
+    "id": "b92a4f6c-88b0-4592-b84d-4d5b4bfc5524",
+    "name": "Offset"
+  },
+  {
+    "id": "bf58031b-dbd3-4beb-8da8-ed1118341bc6",
+    "name": "Bazzi"
+  }
 ]

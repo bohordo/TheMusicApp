@@ -1,6 +1,6 @@
 package com.training.themusicapp.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.training.themusicapp.mapper.MappingUtil;
 import com.training.themusicapp.repository.ArtistRepository;
@@ -43,7 +43,7 @@ public class DataService {
         userRepository.saveAll(userEntities);
     }
 
-    public void saveArtistData(List <Artist> artists){
+    public void saveArtistData(List <Artist> artists) throws JsonProcessingException {
         List <ArtistEntity> artistsEntities = mappingUtil.mapAll(artists, ArtistEntity.class);
         artistRepository.saveAll(artistsEntities);
     }
