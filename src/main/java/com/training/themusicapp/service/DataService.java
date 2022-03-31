@@ -1,5 +1,7 @@
 package com.training.themusicapp.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.training.themusicapp.mapper.MappingUtil;
 import com.training.themusicapp.repository.ArtistRepository;
 import com.training.themusicapp.repository.SongRepository;
@@ -31,6 +33,7 @@ public class DataService {
     private MappingUtil mappingUtil;
 
     public void saveSongsData(List <Song> songs){
+        ObjectMapper mapper = new ObjectMapper();
         List <SongEntity> songEntities = mappingUtil.mapAll(songs, SongEntity.class);
         songRepository.saveAll(songEntities);
     }

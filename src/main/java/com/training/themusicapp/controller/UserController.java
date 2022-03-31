@@ -4,6 +4,7 @@ import com.training.themusicapp.controller.dto.UserDto;
 import com.training.themusicapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,14 +18,12 @@ public class UserController
     @Autowired
     private UserService userService;
 
-    @GetMapping("/get/all")
-    public List<UserDto> getUsers(){
+    @GetMapping("/top/{number}")
+    public List<UserDto> getUsersByTop(@PathVariable String number)
+    {
+        if(number.equals("3")){
+            return userService.getTopThree();
+        }
         return userService.getAllUsers();
     }
-
-    @GetMapping("/get/top/three")
-    public List<UserDto> getTopThree(){
-        return userService.getTopThree();
-    }
-
 }

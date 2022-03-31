@@ -4,6 +4,7 @@ import com.training.themusicapp.controller.dto.ArtistDto;
 import com.training.themusicapp.service.ArtistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,20 +18,15 @@ public class ArtistController {
     @Autowired
     ArtistService artistService;
 
-    @GetMapping("/get/all")
-    public List<ArtistDto> getAll(){
-        return artistService.getTopThree();
-    }
-
-    @GetMapping("/get/top/three")
-    public List<ArtistDto> getTopThree()
+    @GetMapping("/top/{number}")
+    public List<ArtistDto> getTopByNumber(@PathVariable String number)
     {
-        return artistService.getTopThree();
-
-    }
-
-    @GetMapping("/get/top/five")
-    public List<ArtistDto> getTopFive(){
-        return artistService.getTopFive();
+        if (number.equals("3")){
+            return artistService.getTopThree();
+        }
+        if (number.equals("5")){
+            return artistService.getTopFive();
+        }
+            return artistService.getAllArtist();
     }
 }
