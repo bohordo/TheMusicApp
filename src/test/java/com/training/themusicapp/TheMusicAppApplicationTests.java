@@ -9,5 +9,4 @@ class TheMusicAppApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
