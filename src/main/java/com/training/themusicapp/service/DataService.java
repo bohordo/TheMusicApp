@@ -33,7 +33,6 @@ public class DataService {
     private MappingUtil mappingUtil;
 
     public void saveSongsData(List <Song> songs){
-        ObjectMapper mapper = new ObjectMapper();
         List <SongEntity> songEntities = mappingUtil.mapAll(songs, SongEntity.class);
         songRepository.saveAll(songEntities);
     }
@@ -43,7 +42,7 @@ public class DataService {
         userRepository.saveAll(userEntities);
     }
 
-    public void saveArtistData(List <Artist> artists) throws JsonProcessingException {
+    public void saveArtistData(List <Artist> artists){
         List <ArtistEntity> artistsEntities = mappingUtil.mapAll(artists, ArtistEntity.class);
         artistRepository.saveAll(artistsEntities);
     }

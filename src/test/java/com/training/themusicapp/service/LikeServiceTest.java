@@ -22,8 +22,7 @@ class LikeServiceTest {
         song.setName("song-name");
         song.setArtists("song-artist");
         SongEntity songEntity = mapper.convertValue (song, SongEntity.class);
-        song = likeService.songPlusOneLike(songEntity);
-        assertEquals (1,song.getNumberOfLikes());
-        assertNotEquals (0,song.getNumberOfLikes());
+        assertEquals (1,likeService.songPlusOneLike(songEntity).getNumberOfLikes());
+        assertNotEquals (0,likeService.songPlusOneLike(songEntity).getNumberOfLikes());
     }
 }
