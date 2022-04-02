@@ -1,7 +1,5 @@
 package com.training.themusicapp.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.training.themusicapp.mapper.MappingUtil;
 import com.training.themusicapp.repository.ArtistRepository;
 import com.training.themusicapp.repository.SongRepository;

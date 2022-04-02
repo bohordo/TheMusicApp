@@ -35,7 +35,7 @@ public class LikeService {
 
     ObjectMapper mapper = new ObjectMapper();
 
-    public void likeASong(String songId, String userId){
+    public boolean likeASong(String songId, String userId){
 
         if(!couldYouLikeThatSong(songId,userId)){
 
@@ -59,9 +59,12 @@ public class LikeService {
                 songRepository.save(mapper.convertValue (song, SongEntity.class));
                 userSongRepository.save(mapper.convertValue (userSong, UserSongEntity.class));
                 artistRepository.save(mapper.convertValue (artist, ArtistEntity.class));
+
+                return true;
             }
         }
 
+        return false;
     }
 
     public Song songPlusOneLike(SongEntity songToLikeEntity){
@@ -73,6 +76,6 @@ public class LikeService {
     }
 
     public boolean couldYouLikeThatSong(String songId, String userId){
-        return userSongRepository.findById(userId+songId).isPresent();
+        return userSongRepository.findById(songId+userId).isPresent();
     }
 }
