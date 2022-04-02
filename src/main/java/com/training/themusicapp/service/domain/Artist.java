@@ -7,6 +7,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Artist {
 
+    private String id;
     private String name;
     private int totalNumberOfLikes;
 
