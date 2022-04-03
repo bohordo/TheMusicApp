@@ -11,7 +11,6 @@ import com.training.themusicapp.repository.entity.SongEntity;
 import com.training.themusicapp.repository.entity.UserEntity;
 import com.training.themusicapp.repository.entity.UserSongEntity;
 import com.training.themusicapp.service.domain.Song;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -46,13 +45,8 @@ class LikeServiceTest {
     ArtistEntity artistEntity;
     Song song;
 
-
-    @Before
-    public void setUp(){
-    }
-
     @Test
-    public void shouldBeTrueWhenLikeASong(){
+    void shouldBeTrueWhenLikeASong(){
 
         userSongEntity = new UserSongEntity();
         userSongEntity.setSongId("SongId");
@@ -80,7 +74,7 @@ class LikeServiceTest {
     }
 
     @Test
-    public void shouldBeFalseWhenLikeASong(){
+    void shouldBeFalseWhenLikeASong(){
         assertFalse(likeService.likeASong("789","456"));
     }
 
