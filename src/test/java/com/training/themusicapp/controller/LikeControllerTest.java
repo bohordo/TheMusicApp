@@ -25,7 +25,6 @@ public class LikeControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
     private ObjectMapper mapper = new ObjectMapper();
 
     @Test
