@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {TheMusicAppApplication.class})
@@ -174,39 +175,47 @@ public class SongServiceTest {
     @Test
     public void getSongsAll(){
         assertEquals(1,songService.getSongs("1").size());
+        assertNotNull(songService.getSongs("1"));
     }
 
     @Test
     public void getSongsFive(){
         assertEquals(5,songService.getSongs("5").size());
+        assertNotNull(songService.getSongs("5"));
     }
 
     @Test
     public void getSongsTen(){
         assertEquals(10,songService.getSongs("10").size());
+        assertNotNull(songService.getSongs("10"));
     }
 
     @Test
     public void getSongsFifteen(){
         assertEquals(15,songService.getSongs("15").size());
+        assertNotNull(songService.getSongs("15"));
     }
 
     @Test
     public void getAllSongs(){
         assertEquals(1,songService.getAllSongs().size());
+        assertNotNull(songService.getAllSongs());
     }
 
     @Test
     public void getTopFive(){
         assertEquals(5,songService.getTopFive().size());
+        assertNotNull(songService.getTopFive());
     }
 
     @Test
     public void getTopTen(){
         assertEquals(10,songService.getTopTen().size());
+        assertNotNull(songService.getTopTen());
     }
     @Test
     public void getTopFifteen(){
         assertEquals(15,songService.getTopFifteen().size());
+        assertNotNull(songService.getTopFifteen());
     }
 }
