@@ -38,6 +38,6 @@ public class UserSongRepositoryTest {
         List<UserSongEntity> userSongEntities = (List<UserSongEntity>) userSongRepository.findAll();
         assertEquals("11",userSongEntities.get(0).getId());
         assertEquals("1",userSongEntities.get(0).getSongId());
-        assertEquals("1",userSongEntities.get(0).getSongId());
+        assertEquals("1",userSongEntities.get(0).getUserId());
     }
 }
