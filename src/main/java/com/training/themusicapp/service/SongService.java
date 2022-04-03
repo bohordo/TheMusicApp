@@ -53,8 +53,4 @@ public class SongService {
         return mappingUtil.mapAll(listSong, SongDto.class);
 
     }
-
-    public void save(List<SongEntity> songs){
-        songRepository.saveAll(songs);
-    }
 }
