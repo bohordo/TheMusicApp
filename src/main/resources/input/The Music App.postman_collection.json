@@ -6,163 +6,15 @@
 	},
 	"item": [
 		{
-			"name": "Song",
-			"item": [
-				{
-					"name": "All Songs",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8082/song/get/all",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"song",
-								"get",
-								"all"
-							],
-							"query": [
-								{
-									"key": "File",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Top 5 Songs",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8082/song/get/top/five",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"song",
-								"get",
-								"top",
-								"five"
-							],
-							"query": [
-								{
-									"key": "File",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Top 10 Songs",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8082/song/get/top/ten",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"song",
-								"get",
-								"top",
-								"ten"
-							],
-							"query": [
-								{
-									"key": "File",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Top 15 Songs",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8082/song/get/top/fifteen",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"song",
-								"get",
-								"top",
-								"fifteen"
-							],
-							"query": [
-								{
-									"key": "File",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "User",
 			"item": [
 				{
-					"name": "All Users",
+					"name": "Users",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/user/get/all",
+							"raw": "http://localhost:8082/user/top/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -170,30 +22,8 @@
 							"port": "8082",
 							"path": [
 								"user",
-								"get",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Top 3 User with most liked songs",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8082/user/get/top/three",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"user",
-								"get",
 								"top",
-								"three"
+								"3"
 							]
 						}
 					},
@@ -212,17 +42,16 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/D:/Training 2022/TheMusicApp/src/main/resources/input/users.json"
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"1cS0TgbR263ey9jn0MwD2\",\r\n    \"songId\":\"8cd0f08b-f69d-4ab3-8e3c-16b0b86bbe3a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/like/song/08bNPGLD8AhKpnnERrAc6/cac92682-6a6a-474d-a5f0-53b79504e9d",
+							"raw": "http://localhost:8082/like/song",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -230,9 +59,87 @@
 							"port": "8082",
 							"path": [
 								"like",
+								"song"
+							],
+							"query": [
+								{
+									"key": "File",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Song",
+			"item": [
+				{
+					"name": "Songs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/song/top/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
 								"song",
-								"08bNPGLD8AhKpnnERrAc6",
-								"cac92682-6a6a-474d-a5f0-53b79504e9d"
+								"top",
+								"5"
+							],
+							"query": [
+								{
+									"key": "File",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artist",
+			"item": [
+				{
+					"name": "Artist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/artist/top/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"artist",
+								"top",
+								"5"
 							],
 							"query": [
 								{
@@ -372,118 +279,6 @@
 								"data",
 								"load",
 								"songs"
-							],
-							"query": [
-								{
-									"key": "File",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Artist",
-			"item": [
-				{
-					"name": "All Artist",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8082/song/get/all",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"song",
-								"get",
-								"all"
-							],
-							"query": [
-								{
-									"key": "File",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Top 3 Artist",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8082/artist/get/top/three",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"artist",
-								"get",
-								"top",
-								"three"
-							],
-							"query": [
-								{
-									"key": "File",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Top 5 Artist",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8082/artist/get/top/five",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"artist",
-								"get",
-								"top",
-								"five"
 							],
 							"query": [
 								{
