@@ -14,5 +14,6 @@ public interface ArtistRepository extends CrudRepository<ArtistEntity, String> {
 
     List<ArtistEntity> findTop3ByOrderByTotalNumberOfLikesDesc();
     List<ArtistEntity> findTop5ByOrderByTotalNumberOfLikesDesc();
+    ArtistEntity findByName(String name);
 
 }

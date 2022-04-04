@@ -16,8 +16,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import java.util.ArrayList;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -39,6 +37,22 @@ public class DataControllerTest {
     @Before
     public void setUp(){
 
+    }
+
+    @Test
+    public void shouldSaveSongsDataTest() throws Exception {
+        Mockito.when(dataService.saveSongsData(Mockito.any())).thenReturn(true);
+        MockMultipartFile jsonFile =
+                new MockMultipartFile(
+                        "file",
+                        "spotify-top100-2018.json",
+                        "application/json",
+                        "[{\"id\":\"songId\",\"name\": \"IDK\",\"artists\": \"Drake\",\"numberOfLikes\": 1}]"
+                                .getBytes());
+
+        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+        mockMvc.perform(multipart("/data/load/songs").file(jsonFile))
+                .andExpect(status().isOk());
     }
 
     @Test

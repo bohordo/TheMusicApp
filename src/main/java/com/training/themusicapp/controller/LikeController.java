@@ -16,7 +16,7 @@ public class LikeController {
 
     @PostMapping("/song")
     public ResponseEntity<String> likeASong(@RequestBody UserSongDto userSongDto){
-        if(likeService.likeASong(userSongDto.getSongId(),userSongDto.getUserId())){
+        if(likeService.likeASong(userSongDto.getUserId(),userSongDto.getSongId())){
             return new ResponseEntity("Song Liked", HttpStatus.OK);
         }
         return new ResponseEntity("Song already liked", HttpStatus.ACCEPTED);

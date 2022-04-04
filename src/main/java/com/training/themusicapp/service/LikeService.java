@@ -35,9 +35,9 @@ public class LikeService {
 
     ObjectMapper mapper = new ObjectMapper();
 
-    public boolean likeASong(String songId, String userId){
+    public boolean likeASong(String userId, String songId){
 
-        if(!couldYouLikeThatSong(songId,userId)){
+        if(!couldYouLikeThatSong(userId, songId)){
 
             Optional<SongEntity> songToLikeEntity = songRepository.findById(songId);
 
@@ -51,7 +51,8 @@ public class LikeService {
                 User user =  mapper.convertValue (optionalUserEntity.orElse(null), User.class);
                 user.setTotalNumberOfLikes(user.getTotalNumberOfLikes()+1);
 
-                Optional<ArtistEntity> optionalArtist = artistRepository.findById(song.getArtists());
+                ArtistEntity optionalArtist = artistRepository.findByName(song.getArtists());
+
                 Artist artist  = mapper.convertValue (optionalArtist, Artist.class);
 
                 artist.setTotalNumberOfLikes(artist.getTotalNumberOfLikes()+1);
@@ -59,6 +60,7 @@ public class LikeService {
                 songRepository.save(mapper.convertValue (song, SongEntity.class));
                 userSongRepository.save(mapper.convertValue (userSong, UserSongEntity.class));
                 artistRepository.save(mapper.convertValue (artist, ArtistEntity.class));
+                userRepository.save(mapper.convertValue (user, UserEntity.class));
 
                 return true;
             }
@@ -75,7 +77,7 @@ public class LikeService {
 
     }
 
-    public boolean couldYouLikeThatSong(String songId, String userId){
-        return userSongRepository.findById(songId+userId).isPresent();
+    public boolean couldYouLikeThatSong(String userId, String songId){
+        return userSongRepository.findById(userId+songId).isPresent();
     }
 }
