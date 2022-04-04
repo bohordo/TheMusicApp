@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.StreamSupport;
 
 @Service
 public class DataService {
@@ -30,19 +31,30 @@ public class DataService {
     @Autowired
     private MappingUtil mappingUtil;
 
-    public void saveSongsData(List <Song> songs){
+    public boolean saveSongsData(List <Song> songs){
         List <SongEntity> songEntities = mappingUtil.mapAll(songs, SongEntity.class);
+        if(songs.size()==StreamSupport.stream(songRepository.findAll().spliterator(), false).count()){
+            return false;
+        }
         songRepository.saveAll(songEntities);
+        return true;
     }
 
-    public void saveUsersData(List <User> users){
+    public boolean saveUsersData(List <User> users){
         List <UserEntity> userEntities = mappingUtil.mapAll(users, UserEntity.class);
+        if(users.size()==StreamSupport.stream(userRepository.findAll().spliterator(), false).count()){
+            return false;
+        }
         userRepository.saveAll(userEntities);
+        return true;
     }
 
-    public void saveArtistData(List <Artist> artists){
+    public boolean saveArtistData(List <Artist> artists){
         List <ArtistEntity> artistsEntities = mappingUtil.mapAll(artists, ArtistEntity.class);
+        if(artists.size()==StreamSupport.stream(artistRepository.findAll().spliterator(), false).count()){
+            return false;
+        }
         artistRepository.saveAll(artistsEntities);
+        return true;
     }
-
 }
