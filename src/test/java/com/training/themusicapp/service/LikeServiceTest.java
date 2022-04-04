@@ -67,10 +67,11 @@ class LikeServiceTest {
         song.setId("SongId");
         song.setName("song-name");
         song.setArtists("artist");
+        Mockito.when(artistRepository.findByName(song.getArtists())).thenReturn(artistEntity);
         SongEntity songEntity = mapper.convertValue (song, SongEntity.class);
         Mockito.when(songRepository.findById(song.getId())).thenReturn(Optional.of(songEntity));
 
-        assertTrue(likeService.likeASong(userSongEntity.getSongId(),userSongEntity.getUserId()));
+        assertTrue(likeService.likeASong(userSongEntity.getUserId(),userSongEntity.getSongId()));
     }
 
     @Test
