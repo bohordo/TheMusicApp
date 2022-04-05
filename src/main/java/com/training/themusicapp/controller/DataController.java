@@ -18,13 +18,13 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/data")
+@RequestMapping(path = "/data")
 public class DataController {
 
     @Autowired
     private DataService dataService;
 
-    @PostMapping("load/songs")
+    @PostMapping(path = "load/songs")
     public ResponseEntity <String> loadSongs(@RequestParam ("file") MultipartFile file) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         List<Song> songs = mapper.readValue(file.getInputStream(), new TypeReference<List<Song>>(){});
@@ -34,7 +34,7 @@ public class DataController {
         return new ResponseEntity("Songs already loaded", HttpStatus.ACCEPTED);
     }
 
-    @PostMapping("/load/users")
+    @PostMapping(path = "/load/users")
     public ResponseEntity <String> loadUsers(@RequestParam ("file") MultipartFile file) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         List<User> users = mapper.readValue(file.getInputStream(), new TypeReference<List<User>>(){});
@@ -44,7 +44,7 @@ public class DataController {
         return new ResponseEntity("Users already loaded", HttpStatus.ACCEPTED);
     }
 
-    @PostMapping("/load/artist")
+    @PostMapping(path = "/load/artist")
     public ResponseEntity <String> loadArtist(@RequestParam ("file") MultipartFile file) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         List<Artist> artist = mapper.readValue(file.getInputStream(), new TypeReference<List<Artist>>(){});

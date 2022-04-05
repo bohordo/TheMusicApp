@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping(path = "/user")
 public class UserController
 {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/top/{number}")
+    @GetMapping(path = "/top/{number}")
     public List<UserDto> getUsersByTop(@PathVariable String number)
     {
             return userService.getUsers(number);

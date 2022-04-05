@@ -12,13 +12,13 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/artist")
+@RequestMapping(path = "/artist")
 public class ArtistController {
 
     @Autowired
     ArtistService artistService;
 
-    @GetMapping("/top/{number}")
+    @GetMapping(path = "/top/{number}")
     public List<ArtistDto> getTopByNumber(@PathVariable String number)
     {
             return artistService.getArtist(number);

@@ -8,13 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/like")
+@RequestMapping(path = "/like")
 public class LikeController {
 
     @Autowired
     LikeService likeService;
 
-    @PostMapping("/song")
+    @PostMapping(path = "/song")
     public ResponseEntity<String> likeASong(@RequestBody UserSongDto userSongDto){
         if(likeService.likeASong(userSongDto.getUserId(),userSongDto.getSongId())){
             return new ResponseEntity("Song Liked", HttpStatus.OK);

@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/song")
+@RequestMapping(path = "/song")
 public class SongController {
 
     @Autowired
     private SongService songService;
 
-    @GetMapping("/top/{number}")
+    @GetMapping(path = "/top/{number}")
     public List<SongDto> getTopByNumberSongs(@PathVariable String number)
     {
         return songService.getSongs(number);
