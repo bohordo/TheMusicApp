@@ -1,5 +1,6 @@
 package com.training.themusicapp.controller;
 
+import com.training.themusicapp.configuration.ToggleConfig;
 import com.training.themusicapp.controller.dto.UserSongDto;
 import com.training.themusicapp.service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,11 @@ public class LikeController {
 
     @PostMapping(path = "/song")
     public ResponseEntity<String> likeASong(@RequestBody UserSongDto userSongDto){
+
+        if(!ToggleConfig.isLikeASongEnable){
+            return new ResponseEntity("Like a song feature is not yet available", HttpStatus.ACCEPTED);
+        }
+
         if(likeService.likeASong(userSongDto.getUserId(),userSongDto.getSongId())){
             return new ResponseEntity("Song Liked", HttpStatus.OK);
         }
