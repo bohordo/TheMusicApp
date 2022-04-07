@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {TheMusicAppApplication.class})
-class LikeServiceTest {
+public class LikeServiceTest {
 
     @MockBean
     private UserSongRepository userSongRepository;

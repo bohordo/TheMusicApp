@@ -5,10 +5,10 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class ArtistDtoTest {
+public class ArtistDtoTest {
 
     @Test
-    void shouldValidateArtistDto(){
+    public void shouldValidateArtistDto(){
         ArtistDto artistDto = new ArtistDto();
         assertNotNull(artistDto);
         artistDto.setName("ArtistDto");
