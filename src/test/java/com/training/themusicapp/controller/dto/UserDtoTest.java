@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class UserDtoTest {
+class UserDtoTest {
 
     @Test
-    public void shouldValidateUserDto(){
+    void shouldValidateUserDto(){
         UserDto userDto = new UserDto();
         assertNotNull(userDto);
         userDto.setId("id");
