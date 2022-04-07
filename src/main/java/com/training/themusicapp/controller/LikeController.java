@@ -18,14 +18,14 @@ public class LikeController {
     @PostMapping(path = "/song")
     public ResponseEntity<String> likeASong(@RequestBody UserSongDto userSongDto){
 
-        if(!ToggleConfig.isLikeASongEnable){
-            return new ResponseEntity("Like a song feature is not yet available", HttpStatus.ACCEPTED);
+        if(Boolean.FALSE.equals(ToggleConfig.IsLikeASongEnable)){
+            return new ResponseEntity<String>("Like a song feature is not yet available", HttpStatus.ACCEPTED);
         }
 
         if(likeService.likeASong(userSongDto.getUserId(),userSongDto.getSongId())){
-            return new ResponseEntity("Song Liked", HttpStatus.OK);
+            return new ResponseEntity<String>("Song Liked", HttpStatus.OK);
         }
-        return new ResponseEntity("Song already liked", HttpStatus.ACCEPTED);
+        return new ResponseEntity<String>("Song already liked", HttpStatus.ACCEPTED);
     }
 
 }

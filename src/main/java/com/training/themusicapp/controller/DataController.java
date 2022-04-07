@@ -29,9 +29,9 @@ public class DataController {
         ObjectMapper mapper = new ObjectMapper();
         List<Song> songs = mapper.readValue(file.getInputStream(), new TypeReference<List<Song>>(){});
         if(dataService.saveSongsData(songs)){
-            return new ResponseEntity("Songs loaded", HttpStatus.OK);
+            return new ResponseEntity<String>("Songs loaded", HttpStatus.OK);
         }
-        return new ResponseEntity("Songs already loaded", HttpStatus.ACCEPTED);
+        return new ResponseEntity<String>("Songs already loaded", HttpStatus.ACCEPTED);
     }
 
     @PostMapping(path = "/load/users")
@@ -39,9 +39,9 @@ public class DataController {
         ObjectMapper mapper = new ObjectMapper();
         List<User> users = mapper.readValue(file.getInputStream(), new TypeReference<List<User>>(){});
         if(dataService.saveUsersData(users)){
-            return new ResponseEntity("Users loaded", HttpStatus.OK);
+            return new ResponseEntity<String>("Users loaded", HttpStatus.OK);
         }
-        return new ResponseEntity("Users already loaded", HttpStatus.ACCEPTED);
+        return new ResponseEntity<String>("Users already loaded", HttpStatus.ACCEPTED);
     }
 
     @PostMapping(path = "/load/artist")
@@ -49,8 +49,8 @@ public class DataController {
         ObjectMapper mapper = new ObjectMapper();
         List<Artist> artist = mapper.readValue(file.getInputStream(), new TypeReference<List<Artist>>(){});
         if(dataService.saveArtistData(artist)){
-            return new ResponseEntity("Artist loaded", HttpStatus.OK);
+            return new ResponseEntity<String>("Artist loaded", HttpStatus.OK);
         }
-        return new ResponseEntity("Artist already loaded", HttpStatus.ACCEPTED);
+        return new ResponseEntity<String>("Artist already loaded", HttpStatus.ACCEPTED);
     }
 }
