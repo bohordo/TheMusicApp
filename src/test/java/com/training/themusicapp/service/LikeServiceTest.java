@@ -76,7 +76,16 @@ class LikeServiceTest {
 
     @Test
     void shouldBeFalseWhenLikeASong(){
-        assertFalse(likeService.likeASong("789","456"));
+        assertFalse(likeService.likeASong("123","456"));
+    }
+
+    @Test
+    void shouldBeFalseWhenLikeASongBecauseTheSongIsAlreadyLiked(){
+        userSongEntity = new UserSongEntity();
+        userSongEntity.setSongId("SongId");
+        userSongEntity.setUserId("UserId");
+        Mockito.when(userSongRepository.findById("UserIdSongId")).thenReturn(Optional.of(userSongEntity));
+        assertFalse(likeService.likeASong("UserId","SongId"));
     }
 
     @Test
