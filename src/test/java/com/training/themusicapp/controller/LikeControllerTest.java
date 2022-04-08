@@ -34,7 +34,10 @@ public class LikeControllerTest {
         userSongDto.setUserId("1cS0TgbR263ey9jn0MwD2");
         userSongDto.setSongId("8cd0f08b-f69d-4ab3-8e3c-16b0b86bbe3a");
 
-        Mockito.when(likeService.likeASong(userSongDto.getSongId(),userSongDto.getUserId())).thenReturn(true);
+        Mockito.when(likeService.likeASong(
+                Mockito.any(),
+                Mockito.any()
+        )).thenReturn(true);
 
         mockMvc.perform(post("/like/song")
                 .content(mapper.writeValueAsString(userSongDto))
@@ -49,7 +52,9 @@ public class LikeControllerTest {
         userSongDto.setUserId("1cS0TgbR263ey9jn0MwD2");
         userSongDto.setSongId("8cd0f08b-f69d-4ab3-8e3c-16b0b86bbe3a");
 
-        Mockito.when(likeService.likeASong(userSongDto.getSongId(),userSongDto.getUserId())).thenReturn(false);
+        Mockito.when(likeService.likeASong(
+                Mockito.any(),Mockito.any()
+        )).thenReturn(false);
 
         mockMvc.perform(post("/like/song")
                         .content(mapper.writeValueAsString(userSongDto))
